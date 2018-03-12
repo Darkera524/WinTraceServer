@@ -17,13 +17,19 @@ var (
 type Config struct {
 	Listen 	string	`json:"listen"`
 	Trace	[]*Trace	`json:"trace"`
+	Wmi		[]*Wmi `json:"wmi"`
 }
 
 type Trace struct {
 	Hostname	[]string	`json:"hostname"`
 	Name	string	`json:"name"`
 	Guid	string	`json:"guid"`
-	Tags	[]string	`json:"tags"`
+}
+
+type Wmi struct {
+	Hostname []string `json:"hostname"`
+	WmiList []string `json:"wmilist"`
+	Database []string `json:"database"`
 }
 
 func GetConfig() *Config {
@@ -53,7 +59,6 @@ func CronParse(cfg string) {
 	for {
 
 		ParseConfig(cfg)
-		fmt.Println(1)
 		time.Sleep(time.Duration(60) * time.Second)
 	}
 }

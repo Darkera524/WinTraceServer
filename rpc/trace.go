@@ -8,7 +8,7 @@ import (
 type Trace int
 
 func (t *Trace) Providers(args model.RequestModel, reply *model.ProvidersResp) error {
-	providers := make(map[string][]string)
+	//providers := make(map[string][]string)
 	metricMap := make(map[string]string)
 	hostname := args.Hostname
 	tracelist := g.GetConfig().Trace
@@ -16,12 +16,12 @@ func (t *Trace) Providers(args model.RequestModel, reply *model.ProvidersResp) e
 		hostlist := v.Hostname
 		for _,inshost := range hostlist {
 			if hostname == inshost {
-				providers[v.Guid] = v.Tags
+				//providers[v.Guid] = v.Tags
 				metricMap[v.Guid] = v.Name
 			}
 		}
 	}
-	reply.Providers = providers
+	//reply.Providers = providers
 	reply.MetricMap = metricMap
 
 	return nil

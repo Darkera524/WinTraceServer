@@ -4,8 +4,14 @@
     {
       "hostname": ["test"],
       "name": "dns",
-      "guid": "EB79061A-A566-4698-9119-3ED2807060E7",
-      "tags": ["Task Name", "QNAME", "Source"]
+      "guid": "EB79061A-A566-4698-9119-3ED2807060E7"
+    }
+  ],
+  "wmi":[
+    {
+      "hostname": ["test"],
+      "wmilist": [""],
+      "database": ["timescaledb"]
     }
   ]
 }

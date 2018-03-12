@@ -13,6 +13,7 @@ func Start(){
 
 	server := rpc.NewServer()
 	server.Register(new(Trace))
+	server.Register(new(Wmi))
 
 	l, err := net.Listen("tcp", addr)
 	if err != nil {
